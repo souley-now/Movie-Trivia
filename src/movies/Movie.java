@@ -27,9 +27,9 @@ public class Movie {
 	 * @param audienceRating of movie
 	 */
 	public Movie (String name, int criticRating, int audienceRating) {
-		this.name = name;
-		this.criticRating = criticRating;
-		this.audienceRating = audienceRating;
+		this.name = name.toLowerCase().trim();
+		this.criticRating = Math.max(0, Math.min(100, criticRating)); // Ensure rating is between 0 and 100
+		this.audienceRating = Math.max(0, Math.min(100, audienceRating));
 	}
 
 	/**
@@ -57,14 +57,14 @@ public class Movie {
 	 * @param criticRating the criticRating to set
 	 */
 	public void setCriticRating(int criticRating) {
-		this.criticRating = criticRating;
+		this.criticRating = Math.max(0, Math.min(100, criticRating));
 	}
 
 	/**
 	 * @param audienceRating the audienceRating to set
 	 */
 	public void setAudienceRating(int audienceRating) {
-		this.audienceRating = audienceRating;
+		this.audienceRating = Math.max(0, Math.min(100, audienceRating));
 	}
 	
 	/**
